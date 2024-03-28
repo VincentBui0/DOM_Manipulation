@@ -1,0 +1,73 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom CSS Properties */
+:root {
+  --main-bg: red;
+  --top-menu-bg: orange;
+  --sub-menu-bg: rgb(149, 97, 1);
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 3rem auto;
+  color: yellow;
+}
+
+/* Flexbox utilities */
+.flex-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Navigation styling */
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: yellow;
+}
+
+#top-menu a:hover {
+  background-color: var(--sub-menu-bg);
+}
+
+/* Header and menu positioning */
+header, #top-menu {
+  position: relative;
+}
+
+#top-menu {
+  z-index: 20;
+}
+
+#sub-menu {
+  width: 100%;
+  z-index: 10;
+  transition: top 0.5s ease-out;
+  position: absolute; /* Positioning */
+  top: 0; /* Initial position */
+}
+
+#sub-menu a:hover {
+  background-color: var(--top-menu-bg);
+}
+
+/* Active link styling */
+nav a.active {
+  background-color: var(--sub-menu-bg);
+  color: var(--main-bg);
+}
